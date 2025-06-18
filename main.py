@@ -167,7 +167,6 @@ def delete_notes():
     note = cursor.fetchone()
     if note:
         cursor.execute("DELETE FROM notes WHERE id = ?", (note_id))
-        cursor.execute("UPDATE notes SET id = id - 1 WHERE id > ?", (note_id))
         print(Fore.GREEN + "Note Deleted")
         
     else:
