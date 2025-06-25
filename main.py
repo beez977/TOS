@@ -1,3 +1,4 @@
+
 import getpass
 import webview
 import os
@@ -105,6 +106,7 @@ def terminal():
 
 def code():
     print(Fore.GREEN + ">> Code editor not implemented.")
+
 def notes():
     # Create table if it doesn't exist
     cursor.execute('''
@@ -121,10 +123,12 @@ def notes():
         os.system("cls" if os.name == "nt" else "clear")
         type_out(">>> NOTES APP", 0.02)
         print(Fore.GREEN + Style.BRIGHT + """
-        1. Add a Note
-        2. View Notes
-        3. Delete Note(s)
-        4. Return to Main Menu
+        ============================
+        || 1. Add a Note          ||
+        || 2. View Notes          ||
+        || 3. Delete Note(s)      ||
+        || 4. Return to Main Menu ||
+        ============================       
         """)
         choice = input(Fore.GREEN + "Choose an option: ").strip()
         
@@ -172,6 +176,7 @@ def delete_notes():
     else:
         print(Fore.RED + "No note found with that ID.")
     input("Press Enter to continue...")
+
 def browser():
     web = input(Fore.GREEN + Style.BRIGHT + ">> ENTER A URL (include http/https): ")
     try:
@@ -184,7 +189,38 @@ def chat():
     print(Fore.GREEN + ">> Chat not implemented.")
 
 def games():
-    print(Fore.GREEN + ">> Games not implemented.")
+    while True:
+        os.system("cls" if os.name == "nt" else "clear")
+        type_out(">>> GAMES LAUNCHER", 0.02)
+        print(Fore.GREEN + Style.BRIGHT + """
+=====================
+|| 1. Snake        ||
+|| 2. Tic Tac Toe  ||
+|| 3. Pong         ||
+|| 4. Exit to Menu ||
+=====================
+""")
+        g_choice = input(Fore.GREEN + Style.BRIGHT + "CHOOSE A GAME: ").strip()
+
+        if g_choice == "1":
+            type_out("Launching Snake...", 0.02)
+            import snake as sn
+            sn.play()
+        elif g_choice == "2":
+            type_out("Launching Tic Tac Toe...", 0.02)
+            import tictactoe as tt
+            tt.play()
+        elif g_choice == "3":
+            type_out("Launching Pong...", 0.02)
+            import pong as pg
+            pg.play()
+        elif g_choice == "4":
+            type_out("RETURNING TO MENU...", 0.03)
+            time.sleep(1)
+            break
+        else:
+            print(Fore.RED + "!! INVALID OPTION. TRY AGAIN.")
+            time.sleep(1)
 
 def calc():
     print(Fore.GREEN + ">> Calculator not implemented.")
@@ -229,7 +265,7 @@ def options():
             break    
         else:
             print(Fore.RED + "!! INVALID OPTION. TRY AGAIN.")
-        input(Fore.GREEN + ">> PRESS ENTER TO RETURN TO MENU...")
+            input(Fore.GREEN + ">> PRESS ENTER TO RETURN TO MENU...")
 
 # ========== Entry Point ==========
 def main():
