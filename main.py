@@ -1,5 +1,5 @@
 import getpass
-#import webview
+import webview
 import os
 import time
 from cryptography.fernet import Fernet
@@ -172,13 +172,13 @@ def delete_notes():
     else:
         print(Fore.RED + "No note found with that ID.")
     input("Press Enter to continue...")
-#def browser():
-    #web = input(Fore.GREEN + Style.BRIGHT + ">> ENTER A URL (include http/https): ")
-    #try:
-    #    webview.create_window("Browser", web)
-    #    webview.start()
-    #except Exception as e:
-    #    print(Fore.RED + f"!! ERROR OPENING BROWSER: {e}")
+def browser():
+    web = input(Fore.GREEN + Style.BRIGHT + ">> ENTER A URL (include http/https): ")
+    try:
+        webview.create_window("Browser", web)
+        webview.start()
+    except Exception as e:
+       print(Fore.RED + f"!! ERROR OPENING BROWSER: {e}")
 
 def chat():
     print(Fore.GREEN + ">> Chat not implemented.")
@@ -217,8 +217,7 @@ def options():
         elif choice == "3":
             notes()
         elif choice == "4":
-            #browser()
-            print("Not Working in CodeSpace.")
+            browser()
         elif choice == "5":
             chat()
         elif choice == "6":
