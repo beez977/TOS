@@ -1,1 +1,2 @@
-print("Snake")
+def play():
+  print("Snake")
