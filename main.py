@@ -1,6 +1,6 @@
 
 import getpass
-import webview
+#import webview
 import os
 import time
 from cryptography.fernet import Fernet
@@ -178,13 +178,13 @@ def delete_notes():
     input("Press Enter to continue...")
 
 def browser():
-    web = input(Fore.GREEN + Style.BRIGHT + ">> ENTER A URL (include http/https): ")
-    try:
-        webview.create_window("Browser", web)
-        webview.start()
-    except Exception as e:
-       print(Fore.RED + f"!! ERROR OPENING BROWSER: {e}")
-
+    #web = input(Fore.GREEN + Style.BRIGHT + ">> ENTER A URL (include http/https): ")
+    #try:
+    #    webview.create_window("Browser", web)
+    #    webview.start()
+    #except Exception as e:
+    #   print(Fore.RED + f"!! ERROR OPENING BROWSER: {e}")
+    print("Unavalible")
 def chat():
     print(Fore.GREEN + ">> Chat not implemented.")
 
@@ -213,7 +213,10 @@ def games():
         elif g_choice == "3":
             type_out("Launching Pong...", 0.02)
             import pong as pg
-            pg.play()
+            while True:
+                pg.play()
+                if c == "Exit" or "exit":
+                    break    
         elif g_choice == "4":
             type_out("RETURNING TO MENU...", 0.03)
             time.sleep(1)
