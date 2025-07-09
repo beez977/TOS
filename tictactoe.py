@@ -7,7 +7,7 @@ def play():
 
   os.system("cls" if os.name == "nt" else "clear")
   print(Fore.GREEN + Style.BRIGHT + "TICTACTOE")
-  print("------------------------------------")
+  print(Fore.GREEN + Style.BRIGHT + "------------------------------------")
   c = input(Fore.GREEN + Style.BRIGHT + "Play or Exit: ").strip()
   
   
