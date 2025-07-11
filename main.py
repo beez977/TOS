@@ -1,4 +1,3 @@
-
 import getpass
 #import webview
 import os
@@ -209,14 +208,14 @@ def games():
         elif g_choice == "2":
             type_out("Launching Tic Tac Toe...", 0.02)
             import tictactoe as tt
-            tt.play()
+            while True:
+                tt.play()
+                if tt.inp() == "e":
+                    break    
         elif g_choice == "3":
             type_out("Launching Pong...", 0.02)
             import pong as pg
-            while True:
-                pg.play()
-                if c == "Exit" or "exit":
-                    break    
+            pg.play()
         elif g_choice == "4":
             type_out("RETURNING TO MENU...", 0.03)
             time.sleep(1)
