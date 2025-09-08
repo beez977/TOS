@@ -264,6 +264,7 @@ def options():
             calc()
         elif choice == "8":
             type_out("SHUTTING DOWN...")
+            os.system("cls" if os.name == "nt" else "clear")
             break    
         else:
             print(Fore.RED + "!! INVALID OPTION. TRY AGAIN.")
